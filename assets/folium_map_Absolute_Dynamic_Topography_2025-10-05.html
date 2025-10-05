@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f197b4170a327274538ef69d506f169c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f197b4170a327274538ef69d506f169c" ></div>
+        
+    
+            
+        
+</body>
+<script>
+    
+    
+            var map_f197b4170a327274538ef69d506f169c = L.map(
+                "map_f197b4170a327274538ef69d506f169c",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var pane_d89546787d7e2f17b58a37e9af60ec69 = map_f197b4170a327274538ef69d506f169c.createPane(
+                "controls");
+            pane_d89546787d7e2f17b58a37e9af60ec69.style.zIndex = 625;
+            
+                pane_d89546787d7e2f17b58a37e9af60ec69.style.pointerEvents = 'none';
+            
+        
+    
+            var marker_868afcaff598a55cf6e2a57fffc32191 = L.marker(
+                [85.0, 0.0],
+                {
+  "pane": "controls",
+}
+            ).addTo(map_f197b4170a327274538ef69d506f169c);
+        
+    
+            var div_icon_5118b861cce6093d5632bfe1418638cd = L.divIcon({
+  "html": "\u003cdiv style=\"background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:8px;font-size:12px;\"\u003eDraw a rectangle to download GeoTIFF\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_868afcaff598a55cf6e2a57fffc32191.setIcon(div_icon_5118b861cce6093d5632bfe1418638cd);
+            
+    
+            var tile_layer_b42d14a10a935819858325df2f834c7b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b42d14a10a935819858325df2f834c7b.addTo(map_f197b4170a327274538ef69d506f169c);
+        
+    
+            var macro_element_3ab6595d2e4008280e564f612409114f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Absolute Dynamic Topography", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            macro_element_3ab6595d2e4008280e564f612409114f.addTo(map_f197b4170a327274538ef69d506f169c);
+        
+    
+            var macro_element_62d72e65155e8f413bb46651a3068758 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Aerosol Albedo", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_108f4e6eeac272feec68f203edf6cc6b = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Aerosol Extinction", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1308786f2ac0dfc32e0b088ce3fd53ff = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Aerosol Index", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_0238338ce000147e522b2d33dd8cc03b = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Aerosol Optical Depth", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_8258b1a84c5275b56efe6dcd80e08218 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Aerosol Type", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1182b2cd873cfa2f66ccd49a73243ffb = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Albedo", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_af36a91e562fc7852a156f7f4666e71f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Amphibian Richness", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c908ab222bcfa78749e2b259bf692058 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Areas of No Data", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_ec14a34cbb558442bbe6bc10ea2fa006 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Blue Marble", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_9781f2a989fdfd27484f19679d807221 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Brightness Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_2ac6a9a4ac4d21c82da8a209a763f3ae = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Canopy Characteristics", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_87ccfb6f0ebb17b757d01d08adbd0e60 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Carbon Dioxide", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d56018dc6418e53a9779b92c1a1fa914 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Carbon Monoxide", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1a58e2f24ad4a9f3f63535bec22c5c97 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Chlorophyll A", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_0f8ee0cc1062cbae13c7515c40978511 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cirrus Reflectance", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_f5054985a530d9d73f7189b66793e8ad = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Clear Sky Confidence", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_adca4a1f990ed8a17bd74a909683c9cc = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Albedo", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_755b9475d46702b65c1ed1d965f34a62 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Effective Radius", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_2a726b7a45a0d68c0e90232eae6b8ee2 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Fraction", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_37859b90b4f411f71566341cad1ecb0f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Liquid Water", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_bd5c3d2d8539b5a632e62647ff9c0147 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Multi Layer Flag", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_ed9f505bb4a4444ef59bae6b6541fda6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Optical Thickness", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d8df6b08cc4a0cec4d3233f3a390587c = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Phase", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_f2f6f857c2e5dbdcd9132bd458fd7043 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Pressure", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c7765cb402f884a376bd7cebabd4198e = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Top Height", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_8735f95ba002c4cd98ad01c9b8f3b51f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Top Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_6040d51cd54b1aaf2a69a9bf5d40daa5 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cloud Water Path", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_b90a575b85393e3b72be550fdfb078cb = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Convective Rainwater Source", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d327957a89a920d85498b378533d1570 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Corrected Reflectance", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_5ac74b9c0184839c779f3aa50df899cc = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Cyclone Hazard", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c8390c43803b2e9c7b7dfb50eecc3714 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "DHR Reflectance", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_aa85c85efb2ce06d23663eafeab85fba = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Dams", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_27a742b102b0828580c21801c82852ed = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Drought Hazard", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1508b326924420a33a8e98197950c2d2 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Dust", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_0a219e62a6e4bdf519d4ddeaf9223323 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Earth at Night", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_4c8af4e20840022f0f0cb13eed591ae1 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Evaporation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_9459c2adda79dffd5f26bfa15004d3cc = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "FPAR", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d4aba442dadb1e93c32e0eb07d2b8f29 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Faraday Rotation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_bf01f4fdd0860176a9f631db96041c33 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Fires and Thermal Anomalies", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_026f2cc2cc732f86e7a57fee3ff858a6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Flight Track", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a9dee4202b27c8bf1cb899bb34cf3d61 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Flood Hazard", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d9002b3f21aa89dcd4dea675eacb3277 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Forests, Mangrove", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_4c63e176817238a5e78778ae0460cbf9 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Formaldehyde", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_11ab19bc67e750a19291a33989c12b17 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Freeze/Thaw", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_845e8079862d1cb83cfb8c87cdca79a0 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Frozen Area", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c6588cd4c6c175d2f86599166cf4fccd = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Geostationary", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_fe41a4f3d17408711080abef43b204d6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Global Digital Elevation Map", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_4e41e6bc9edef91ec4ffb64fc0666722 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Gross Primary Productivity", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_9c10ab3a7c466357bbbe77d7444e8f38 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Heterotrophic Respiration", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_6121d6082af88808e63b3dcaa8084c6f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Human Built-up And Settlement Extent", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_215a900686dcae22430f433b3ff9c0a6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Human Footprint", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_502d52fc695de60bd3ca70cf0b44159f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Ice Surface Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_d641606e524f10383212c7b156efdf43 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Impervious Surface", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_561ec922f2a4af2a04fb8fcc3df6b5f7 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Isotropic Kernel Parameters", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_556ece17cbb8bd8090b821a9d843abd9 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Land Cover", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a1a3ff439510f2af62a6ad601f38a008 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Land Surface Reflectance", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_7652388aee07b51147e9b04603c0ad9e = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Land Surface Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_02266f4e7d3f37a35279034c0e18fae1 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Landslide Hazard", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_20fec350d8f9f4c4a89554b0bbf98e18 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Latitude-Longitude Lines", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_43cf426757632ada6c4e5930eccef303 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Leaf Area Index", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_ee95b3dd54d11577387417a5cfe57c6b = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Lidar", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_5f5381c9744977aafd803dfb66ea15a5 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Lightning", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_90dd7bd09f775aa8db5ebb6ee0a07e32 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Liquid Water Equivalent", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1dc7b2f87295dce3985663915207080b = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Mammal Richness", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_b0d089c81ed3f5643626bdd0503f4e43 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Methane", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_89052ecb9b84f77e681f677dfd6aa3c3 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Net Ecosystem CO2 Exchange", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_6a450721458144493cd19ea7357acd17 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Net Migration", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a80c1862b50cbf427d27281cb3cd8bed = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Nitric Acid", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_dea8605d8ff7a221c833ba4ac1b119e2 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Nitrogen Dioxide", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_ba04c3a4a9d835b10eaa6a998b081145 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Nitrous Oxide", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_b41f2154b1f3814466f99ef1dd222c71 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Open Water Latent Energy Flux", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_63dd7eceaa55f9409c07ea9984ac8ab4 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Orbital Track", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_14015d20ece1dbad82c9da600ab9b038 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Outgoing Radiation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c00ad390ee7b3c1dba62a2a6b2a70e65 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Ozone", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_5fb4441ecd50b990a07fde9943ab34fe = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Particulate Matter", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_bf133e66303d6be0a9bc8f19f62b31f4 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Photosynthesis, Net", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_255438019456e0e3f6b15859d281c37f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Photosynthetically Available Radiation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c23daa203d7fb0ee07ab854814e188c0 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Population Density", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_f9ea795801644fd52944802badaee997 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Power Plants, Nuclear", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_be3997d78cc943452ed0e5e9db6156bc = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Precipitation Estimate", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_f0886869c5f273ab6ac3f6a520f4ecfb = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Precipitation Rate", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_13b22af1fd0017fa407b7262c7dc0be5 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Radiance", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c3ba5db1dcb8665b72a8b32914193716 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Radiation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_432d6df86227cbb6e8c704de23031b94 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Reference Map", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_e386f547be1ae9a3e84d36f90680163c = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Relative Humidity", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_0d7788f107242c26a3e1ada9a0238364 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Reservoirs", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a20f081a3678cfeedd8e8d17bfa76f86 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Ice", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_795bb3d47e69463c2027c7e090b4e929 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Surface Currents", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_30af2f346147a74d7ba54819acd05fec = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Surface Height Anomalies", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_2117a1d683238bd8540e75d99e7331d1 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Surface Salinity", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_0366447869ee50faed6f77c8082ca217 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Surface Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_7c1e1ff4013a15e55b7221651ef43d82 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sea Surface Temperature Anomalies", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_c7b782d6d70f4ab8563129096bf1d075 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Settlements", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_3b0a4cd38c8e02151981269e7014c365 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Ship Track", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_4a311f79717df994514cfd6f3d450545 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sigma0", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_cde26f0894a70efee45353c56493ac00 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Snow Cover", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_2ee09111bb4ebeb514b0d646cb3d22dd = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Snow Depth", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_25e7fa0632df1c6bd5d55128559e9e13 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Snow Extent", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_60f38394febe716be808842c8ee826a7 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Snow Mass", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_cf481eeb2de50ab234ad14848cc7aead = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Snow Water Equivalent", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_508902e7a6c0efe5b0f39175b5a6a167 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Soil Moisture", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_b94478f5aeff9a81437d42c4fbed7758 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Soil Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_dca0a817a7e67345455ba90c81fff053 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Solar Induced Chlorophyll Fluorescence", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_3b80c61faf4cd122b94fdadce1785f71 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Sulfur Dioxide", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_27658ed41212c1891280350b6789a5d7 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Surface Albedo", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_411eb66674f29db6a7b7bdceae6ebbbc = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Surface Flux", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_61843dccf03d7a9ad1c2bb6aae17e05f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Surface Pressure", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_740a93b8d93a40c7adeef72b0781aed1 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Surface Water Extent", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_07dde26bb03235c261656c4c82b1bb3c = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "TOA Albedo", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_4b5eac2030e8699fffaf3b8fb8ddb6f1 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "TOA Flux", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_9419a9c5bc64143db2b7902d0737c026 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Temperature", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_06fb9d4855b9e50c33cdd7ae9cf291c7 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Terrain Elevation", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_b62a0bbecaa45b5fd627c82d9d2b1fed = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Urban Expansion", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_fba54f6f7cc06f8ddcc81d51f036288e = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Urban Extents", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_f44849610cf3e1e38e95ac77456cb47f = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Vegetation Disturbance Status", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a05abbab611b995ddd96c42a03edc5a6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Vegetation Indices", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_500a352e9e832b2de5bf32da1f0c2707 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Vegetation Light Use Efficiency", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_00b3bb4128fa41415ba13bda9ed068b0 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Volcano Hazard", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_1707f4abf1d0387d9ffb8db4f0d310c6 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Water Bodies", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_9e4d00f0d5df5f6e7738594d3e16065a = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Water Vapor", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var macro_element_a058ec94b8cd65bcd813d04e73910658 = L.tileLayer.wms(
+                "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+                {"attribution": "NASA GIBS", "format": "image/png", "layers": "Wind Speed", "styles": "", "time": "2025-10-05", "transparent": true, "version": "1.3.0"}
+            );
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {"circle": false, "circlemarker": false, "marker": false, "polygon": false, "polyline": false},
+              edit: {"edit": false, "remove": false},
+            }
+                // FeatureGroup is to store editable layers.
+                var drawnItems_draw_control_8234050bf4f9a8f2c6b959f49c277a6c =
+                    new L.featureGroup().addTo(
+                        map_f197b4170a327274538ef69d506f169c
+                    );
+
+            options.edit.featureGroup = drawnItems_draw_control_8234050bf4f9a8f2c6b959f49c277a6c;
+            var draw_control_8234050bf4f9a8f2c6b959f49c277a6c = new L.Control.Draw(
+                options
+            ).addTo( map_f197b4170a327274538ef69d506f169c );
+            map_f197b4170a327274538ef69d506f169c.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems_draw_control_8234050bf4f9a8f2c6b959f49c277a6c.addLayer(layer);
+            });
+            map_f197b4170a327274538ef69d506f169c.on('draw:created', function(e) {
+                drawnItems_draw_control_8234050bf4f9a8f2c6b959f49c277a6c.addLayer(e.layer);
+            });
+
+            
+        
+    
+            var layer_control_d35b4ed3e1f652a968493f3dc5f15f0f_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_b42d14a10a935819858325df2f834c7b,
+                },
+                overlays :  {
+                    "Absolute Dynamic Topography" : macro_element_3ab6595d2e4008280e564f612409114f,
+                    "Aerosol Albedo" : macro_element_62d72e65155e8f413bb46651a3068758,
+                    "Aerosol Extinction" : macro_element_108f4e6eeac272feec68f203edf6cc6b,
+                    "Aerosol Index" : macro_element_1308786f2ac0dfc32e0b088ce3fd53ff,
+                    "Aerosol Optical Depth" : macro_element_0238338ce000147e522b2d33dd8cc03b,
+                    "Aerosol Type" : macro_element_8258b1a84c5275b56efe6dcd80e08218,
+                    "Albedo" : macro_element_1182b2cd873cfa2f66ccd49a73243ffb,
+                    "Amphibian Richness" : macro_element_af36a91e562fc7852a156f7f4666e71f,
+                    "Areas of No Data" : macro_element_c908ab222bcfa78749e2b259bf692058,
+                    "Blue Marble" : macro_element_ec14a34cbb558442bbe6bc10ea2fa006,
+                    "Brightness Temperature" : macro_element_9781f2a989fdfd27484f19679d807221,
+                    "Canopy Characteristics" : macro_element_2ac6a9a4ac4d21c82da8a209a763f3ae,
+                    "Carbon Dioxide" : macro_element_87ccfb6f0ebb17b757d01d08adbd0e60,
+                    "Carbon Monoxide" : macro_element_d56018dc6418e53a9779b92c1a1fa914,
+                    "Chlorophyll A" : macro_element_1a58e2f24ad4a9f3f63535bec22c5c97,
+                    "Cirrus Reflectance" : macro_element_0f8ee0cc1062cbae13c7515c40978511,
+                    "Clear Sky Confidence" : macro_element_f5054985a530d9d73f7189b66793e8ad,
+                    "Cloud Albedo" : macro_element_adca4a1f990ed8a17bd74a909683c9cc,
+                    "Cloud Effective Radius" : macro_element_755b9475d46702b65c1ed1d965f34a62,
+                    "Cloud Fraction" : macro_element_2a726b7a45a0d68c0e90232eae6b8ee2,
+                    "Cloud Liquid Water" : macro_element_37859b90b4f411f71566341cad1ecb0f,
+                    "Cloud Multi Layer Flag" : macro_element_bd5c3d2d8539b5a632e62647ff9c0147,
+                    "Cloud Optical Thickness" : macro_element_ed9f505bb4a4444ef59bae6b6541fda6,
+                    "Cloud Phase" : macro_element_d8df6b08cc4a0cec4d3233f3a390587c,
+                    "Cloud Pressure" : macro_element_f2f6f857c2e5dbdcd9132bd458fd7043,
+                    "Cloud Top Height" : macro_element_c7765cb402f884a376bd7cebabd4198e,
+                    "Cloud Top Temperature" : macro_element_8735f95ba002c4cd98ad01c9b8f3b51f,
+                    "Cloud Water Path" : macro_element_6040d51cd54b1aaf2a69a9bf5d40daa5,
+                    "Convective Rainwater Source" : macro_element_b90a575b85393e3b72be550fdfb078cb,
+                    "Corrected Reflectance" : macro_element_d327957a89a920d85498b378533d1570,
+                    "Cyclone Hazard" : macro_element_5ac74b9c0184839c779f3aa50df899cc,
+                    "DHR Reflectance" : macro_element_c8390c43803b2e9c7b7dfb50eecc3714,
+                    "Dams" : macro_element_aa85c85efb2ce06d23663eafeab85fba,
+                    "Drought Hazard" : macro_element_27a742b102b0828580c21801c82852ed,
+                    "Dust" : macro_element_1508b326924420a33a8e98197950c2d2,
+                    "Earth at Night" : macro_element_0a219e62a6e4bdf519d4ddeaf9223323,
+                    "Evaporation" : macro_element_4c8af4e20840022f0f0cb13eed591ae1,
+                    "FPAR" : macro_element_9459c2adda79dffd5f26bfa15004d3cc,
+                    "Faraday Rotation" : macro_element_d4aba442dadb1e93c32e0eb07d2b8f29,
+                    "Fires and Thermal Anomalies" : macro_element_bf01f4fdd0860176a9f631db96041c33,
+                    "Flight Track" : macro_element_026f2cc2cc732f86e7a57fee3ff858a6,
+                    "Flood Hazard" : macro_element_a9dee4202b27c8bf1cb899bb34cf3d61,
+                    "Forests, Mangrove" : macro_element_d9002b3f21aa89dcd4dea675eacb3277,
+                    "Formaldehyde" : macro_element_4c63e176817238a5e78778ae0460cbf9,
+                    "Freeze/Thaw" : macro_element_11ab19bc67e750a19291a33989c12b17,
+                    "Frozen Area" : macro_element_845e8079862d1cb83cfb8c87cdca79a0,
+                    "Geostationary" : macro_element_c6588cd4c6c175d2f86599166cf4fccd,
+                    "Global Digital Elevation Map" : macro_element_fe41a4f3d17408711080abef43b204d6,
+                    "Gross Primary Productivity" : macro_element_4e41e6bc9edef91ec4ffb64fc0666722,
+                    "Heterotrophic Respiration" : macro_element_9c10ab3a7c466357bbbe77d7444e8f38,
+                    "Human Built-up And Settlement Extent" : macro_element_6121d6082af88808e63b3dcaa8084c6f,
+                    "Human Footprint" : macro_element_215a900686dcae22430f433b3ff9c0a6,
+                    "Ice Surface Temperature" : macro_element_502d52fc695de60bd3ca70cf0b44159f,
+                    "Impervious Surface" : macro_element_d641606e524f10383212c7b156efdf43,
+                    "Isotropic Kernel Parameters" : macro_element_561ec922f2a4af2a04fb8fcc3df6b5f7,
+                    "Land Cover" : macro_element_556ece17cbb8bd8090b821a9d843abd9,
+                    "Land Surface Reflectance" : macro_element_a1a3ff439510f2af62a6ad601f38a008,
+                    "Land Surface Temperature" : macro_element_7652388aee07b51147e9b04603c0ad9e,
+                    "Landslide Hazard" : macro_element_02266f4e7d3f37a35279034c0e18fae1,
+                    "Latitude-Longitude Lines" : macro_element_20fec350d8f9f4c4a89554b0bbf98e18,
+                    "Leaf Area Index" : macro_element_43cf426757632ada6c4e5930eccef303,
+                    "Lidar" : macro_element_ee95b3dd54d11577387417a5cfe57c6b,
+                    "Lightning" : macro_element_5f5381c9744977aafd803dfb66ea15a5,
+                    "Liquid Water Equivalent" : macro_element_90dd7bd09f775aa8db5ebb6ee0a07e32,
+                    "Mammal Richness" : macro_element_1dc7b2f87295dce3985663915207080b,
+                    "Methane" : macro_element_b0d089c81ed3f5643626bdd0503f4e43,
+                    "Net Ecosystem CO2 Exchange" : macro_element_89052ecb9b84f77e681f677dfd6aa3c3,
+                    "Net Migration" : macro_element_6a450721458144493cd19ea7357acd17,
+                    "Nitric Acid" : macro_element_a80c1862b50cbf427d27281cb3cd8bed,
+                    "Nitrogen Dioxide" : macro_element_dea8605d8ff7a221c833ba4ac1b119e2,
+                    "Nitrous Oxide" : macro_element_ba04c3a4a9d835b10eaa6a998b081145,
+                    "Open Water Latent Energy Flux" : macro_element_b41f2154b1f3814466f99ef1dd222c71,
+                    "Orbital Track" : macro_element_63dd7eceaa55f9409c07ea9984ac8ab4,
+                    "Outgoing Radiation" : macro_element_14015d20ece1dbad82c9da600ab9b038,
+                    "Ozone" : macro_element_c00ad390ee7b3c1dba62a2a6b2a70e65,
+                    "Particulate Matter" : macro_element_5fb4441ecd50b990a07fde9943ab34fe,
+                    "Photosynthesis, Net" : macro_element_bf133e66303d6be0a9bc8f19f62b31f4,
+                    "Photosynthetically Available Radiation" : macro_element_255438019456e0e3f6b15859d281c37f,
+                    "Population Density" : macro_element_c23daa203d7fb0ee07ab854814e188c0,
+                    "Power Plants, Nuclear" : macro_element_f9ea795801644fd52944802badaee997,
+                    "Precipitation Estimate" : macro_element_be3997d78cc943452ed0e5e9db6156bc,
+                    "Precipitation Rate" : macro_element_f0886869c5f273ab6ac3f6a520f4ecfb,
+                    "Radiance" : macro_element_13b22af1fd0017fa407b7262c7dc0be5,
+                    "Radiation" : macro_element_c3ba5db1dcb8665b72a8b32914193716,
+                    "Reference Map" : macro_element_432d6df86227cbb6e8c704de23031b94,
+                    "Relative Humidity" : macro_element_e386f547be1ae9a3e84d36f90680163c,
+                    "Reservoirs" : macro_element_0d7788f107242c26a3e1ada9a0238364,
+                    "Sea Ice" : macro_element_a20f081a3678cfeedd8e8d17bfa76f86,
+                    "Sea Surface Currents" : macro_element_795bb3d47e69463c2027c7e090b4e929,
+                    "Sea Surface Height Anomalies" : macro_element_30af2f346147a74d7ba54819acd05fec,
+                    "Sea Surface Salinity" : macro_element_2117a1d683238bd8540e75d99e7331d1,
+                    "Sea Surface Temperature" : macro_element_0366447869ee50faed6f77c8082ca217,
+                    "Sea Surface Temperature Anomalies" : macro_element_7c1e1ff4013a15e55b7221651ef43d82,
+                    "Settlements" : macro_element_c7b782d6d70f4ab8563129096bf1d075,
+                    "Ship Track" : macro_element_3b0a4cd38c8e02151981269e7014c365,
+                    "Sigma0" : macro_element_4a311f79717df994514cfd6f3d450545,
+                    "Snow Cover" : macro_element_cde26f0894a70efee45353c56493ac00,
+                    "Snow Depth" : macro_element_2ee09111bb4ebeb514b0d646cb3d22dd,
+                    "Snow Extent" : macro_element_25e7fa0632df1c6bd5d55128559e9e13,
+                    "Snow Mass" : macro_element_60f38394febe716be808842c8ee826a7,
+                    "Snow Water Equivalent" : macro_element_cf481eeb2de50ab234ad14848cc7aead,
+                    "Soil Moisture" : macro_element_508902e7a6c0efe5b0f39175b5a6a167,
+                    "Soil Temperature" : macro_element_b94478f5aeff9a81437d42c4fbed7758,
+                    "Solar Induced Chlorophyll Fluorescence" : macro_element_dca0a817a7e67345455ba90c81fff053,
+                    "Sulfur Dioxide" : macro_element_3b80c61faf4cd122b94fdadce1785f71,
+                    "Surface Albedo" : macro_element_27658ed41212c1891280350b6789a5d7,
+                    "Surface Flux" : macro_element_411eb66674f29db6a7b7bdceae6ebbbc,
+                    "Surface Pressure" : macro_element_61843dccf03d7a9ad1c2bb6aae17e05f,
+                    "Surface Water Extent" : macro_element_740a93b8d93a40c7adeef72b0781aed1,
+                    "TOA Albedo" : macro_element_07dde26bb03235c261656c4c82b1bb3c,
+                    "TOA Flux" : macro_element_4b5eac2030e8699fffaf3b8fb8ddb6f1,
+                    "Temperature" : macro_element_9419a9c5bc64143db2b7902d0737c026,
+                    "Terrain Elevation" : macro_element_06fb9d4855b9e50c33cdd7ae9cf291c7,
+                    "Urban Expansion" : macro_element_b62a0bbecaa45b5fd627c82d9d2b1fed,
+                    "Urban Extents" : macro_element_fba54f6f7cc06f8ddcc81d51f036288e,
+                    "Vegetation Disturbance Status" : macro_element_f44849610cf3e1e38e95ac77456cb47f,
+                    "Vegetation Indices" : macro_element_a05abbab611b995ddd96c42a03edc5a6,
+                    "Vegetation Light Use Efficiency" : macro_element_500a352e9e832b2de5bf32da1f0c2707,
+                    "Volcano Hazard" : macro_element_00b3bb4128fa41415ba13bda9ed068b0,
+                    "Water Bodies" : macro_element_1707f4abf1d0387d9ffb8db4f0d310c6,
+                    "Water Vapor" : macro_element_9e4d00f0d5df5f6e7738594d3e16065a,
+                    "Wind Speed" : macro_element_a058ec94b8cd65bcd813d04e73910658,
+                },
+            };
+            let layer_control_d35b4ed3e1f652a968493f3dc5f15f0f = L.control.layers(
+                layer_control_d35b4ed3e1f652a968493f3dc5f15f0f_layers.base_layers,
+                layer_control_d35b4ed3e1f652a968493f3dc5f15f0f_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_f197b4170a327274538ef69d506f169c);
+
+        
+</script>
+</html>
