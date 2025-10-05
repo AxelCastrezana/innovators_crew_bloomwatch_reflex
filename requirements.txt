@@ -1,25 +1,25 @@
 
 reflex==0.8.13
 requests>=2.28.0
-folium>=0.14.0
+folium==0.20.0
 
 # Core data science and image processing
-numpy
-pillow
-scikit-image
-scikit-learn
+numpy==2.3.3
+pillow==11.3.0
+scikit-image==0.25.2
+scikit-learn==1.7.2
 matplotlib
 
 # Geospatial libraries
 cartopy
-rasterio
-geopandas
-fiona
-shapely
+rasterio==1.4.3
+geopandas==1.1.1
+fiona==1.10.1
+shapely==2.1.2
 
 # Web and data processing
-lxml
-pandas
+lxml==6.0.2
+pandas==2.3.3
 owslib
 
 # Additional mapping and visualization
@@ -28,7 +28,4 @@ ipyleaflet
 cairosvg
 
 # Gradio client for HuggingFace API calls
-gradio_client
-
-# Other utilities (already included in standard library but listing for completeness)
-# os, io, urllib, json, math, datetime, time, xml, re are built-in modules
+gradio_client==1.13.3
