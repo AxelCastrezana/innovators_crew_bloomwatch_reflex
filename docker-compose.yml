@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  cropwatch:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      # Add your environment variables here
+      - EARTHDATA_TOKEN=${EARTHDATA_TOKEN:-}
+      - HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN:-}
+      - HF_TOKEN=${HF_TOKEN:-}
+    volumes:
+      # Mount assets directory for persistent file storage
+      - ./assets:/app/assets
+      - ./uploaded_files:/app/uploaded_files
+      # Mount for development (comment out for production)
+      - ./innovators_crew_bloomwatch_reflex:/app/innovators_crew_bloomwatch_reflex
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy for production
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - cropwatch
+  #   restart: unless-stopped
