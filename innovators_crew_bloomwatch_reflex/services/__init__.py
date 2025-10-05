@@ -1,1 +1,5 @@
-# Services module
+"""
+Services module for BloomWatch application.
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
+"""

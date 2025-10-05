@@ -1,5 +1,7 @@
 """
 UI Components module for BloomWatch application.
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 
 from .ui_components import (

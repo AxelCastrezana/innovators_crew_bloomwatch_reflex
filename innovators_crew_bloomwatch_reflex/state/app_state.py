@@ -3,6 +3,8 @@ BloomWatch Application State Module
 
 This module contains the main Reflex State class for the BloomWatch application,
 managing map generation, layer selection, crop classification, and satellite tile fetching.
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 
 import os

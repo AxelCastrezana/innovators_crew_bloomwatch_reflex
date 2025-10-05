@@ -1,6 +1,8 @@
 """
 BloomWatch - Geospatial Data Viewer and Crop Classification App
 Main application file using modular architecture
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 
 import reflex as rx

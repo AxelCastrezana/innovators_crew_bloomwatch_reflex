@@ -2,6 +2,8 @@
 UI Components for BloomWatch Application
 
 This module contains reusable UI components for the BloomWatch application.
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 
 import reflex as rx

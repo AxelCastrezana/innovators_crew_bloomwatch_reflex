@@ -1,5 +1,7 @@
 """
 File handling utilities
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import os
 import shutil

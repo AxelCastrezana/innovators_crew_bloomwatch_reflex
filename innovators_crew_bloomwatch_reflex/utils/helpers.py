@@ -1,5 +1,7 @@
 """
 Utility helper functions
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import re
 from typing import Optional

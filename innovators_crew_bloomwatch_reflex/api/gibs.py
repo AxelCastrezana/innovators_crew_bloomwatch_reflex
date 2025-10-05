@@ -1,6 +1,8 @@
 """
 NASA GIBS WMS API Client
 Handles communication with NASA GIBS Web Map Service
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import requests
 import xml.etree.ElementTree as ET

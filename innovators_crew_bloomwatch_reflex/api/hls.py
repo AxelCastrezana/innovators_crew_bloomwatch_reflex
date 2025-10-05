@@ -1,6 +1,8 @@
 """
 NASA HLS (Harmonized Landsat Sentinel) API Client
 Handles communication with NASA CMR STAC API for satellite data
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import math
 import requests

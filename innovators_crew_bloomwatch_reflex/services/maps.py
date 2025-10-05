@@ -1,5 +1,7 @@
 """
 Map service for generating Folium maps with GIBS layers
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import os
 import folium

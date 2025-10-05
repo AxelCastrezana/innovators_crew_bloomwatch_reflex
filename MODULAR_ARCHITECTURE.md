@@ -1,5 +1,7 @@
 # BloomWatch Modular Architecture
 
+⚡ **Code generated with AI assistance (GitHub Copilot) for modular refactoring**
+
 This document outlines the modular architecture implemented for the BloomWatch application.
 
 ## Directory Structure

@@ -1,6 +1,8 @@
 """
 HuggingFace API Client
 Handles communication with HuggingFace Spaces for crop classification
+
+⚡ Code generated with AI assistance (GitHub Copilot) for modular refactoring
 """
 import os
 from typing import Optional, List, Tuple
